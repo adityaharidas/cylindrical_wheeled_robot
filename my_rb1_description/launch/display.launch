@@ -1,0 +1,19 @@
+<launch>
+    <!-- load urdf model -->
+    <arg name="model" default="$(find my_rb1_description)/urdf/my_rb1_robot.urdf"/>
+    <param name="robot_description" command="cat $(arg model)" />
+    
+    <!-- send fake joint values -->
+  
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="false"/>
+      </node>
+
+    <!-- Send robot states to tf -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+
+  
+    <!-- Show in Rviz   -->
+    <node name="rviz" pkg="rviz" type="rviz" />
+</launch>
+  
