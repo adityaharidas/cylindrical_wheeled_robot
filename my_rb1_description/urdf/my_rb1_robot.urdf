@@ -1,8 +1,11 @@
 <?xml version="1.0" ?>
 
-<robot name="rb1">
+<robot name="robot">
 
-    <!-- Link - base -->
+    <!-- Link - base footprint -->
+    <link name="base_footprint" />
+
+    <!-- Link - base link -->
     <joint name="joint_base_link" type="fixed">
         <origin rpy="0 0 0" xyz="0.0 0.0 0.15" />
         <child link="base_link" />
@@ -10,11 +13,9 @@
         <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
-    <link name="base_footprint" />`
-    
     <link name="base_link">
-        <origin xyz="0 0 0" rpy="0 0 0"/>  
         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>  
             <mass value="25" />
             <inertia ixx="0.5781" ixy="0" ixz="0" iyy="0.5781" iyz="0" izz="0.7813" />
         </inertial>
@@ -35,16 +36,17 @@
         </visual>
     </link>
       
-    <!-- left-wheel -->
-    <joint name="left_wheel_joint" type="continuous">
+    <!--Joint - left-wheel -->
+    <joint name="joint_left_wheel" type="continuous">
         <parent link="base_link"/>
         <child link="left_wheel"/>
         <origin xyz="0  -0.2 -0.15" rpy="0 0 0"/>
-        <axis xyz="0 1 0"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
         <limit effort="10000" velocity="1000" />
         <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
+    <!-- Link - left wheel -->
     <link name="left_wheel">
         <inertial>
             <mass value="1"/>
@@ -70,16 +72,16 @@
     </link>
     
     <!-- right-wheel -->
-    <joint name="right_wheel_joint" type="continuous">
+    <joint name="joint_chassis_right_wheel" type="continuous">
         <parent link="base_link"/>
         <child link="right_wheel"/>
         <origin xyz="0  0.2 -0.15" rpy="0 0 0"/>
         <limit effort="10000" velocity="1000" />
-        <axis xyz="0 1 0"/>
-
+        <axis xyz="0 1 0" rpy="0 0 0"/>
         <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
+    <!-- Link - right wheel -->
     <link name="right_wheel">
         <inertial>
             <mass value="1"/>
@@ -104,14 +106,14 @@
         </visual>
     </link>
 
-    <!-- front-caster-wheel -->
+    <!-- Joint - front-caster-wheel -->
     <joint name="front_castor_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="front_caster_wheel"/>
         <origin xyz="-0.1  0.0 -0.15" rpy="0 0 0"/>
         <joint_properties damping="1.0" friction="0.0" />
     </joint>
-
+    <!-- Link - front caster wheel -->
     <link name="front_caster_wheel">
         <inertial>
             <mass value="1"/>
@@ -136,7 +138,7 @@
         </visual>
     </link>
 
-    <!-- back-caster-wheel -->
+    <!-- Link - back caster wheel -->
     <joint name="back_caster_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="back_caster_wheel"/>
@@ -168,7 +170,7 @@
         </visual>
     </link>
 
-    <!-- Laser scan -->
+    <!-- Joint - Laser scan -->
     <joint name="front_laser_joint" type="fixed">
         <origin rpy="3.14159 0 0" xyz="0.25 0.0 0.075" />
         <child link="link_laser" />
@@ -176,7 +178,8 @@
         <joint_properties damping="1.0" friction="1.0" />
     </joint>
     
-    <link name="link_laser">
+    <!-- Link - laser scan -->
+    <link name="front_laser">
         <inertial>
             <origin xyz="0 0 0" rpy="1.5 0 0" />
             <mass value="1" />
