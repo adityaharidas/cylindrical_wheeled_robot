@@ -135,7 +135,7 @@
     <joint name="joint_chassis_left_wheel" type="continuous">
         <parent link="base_link" />
         <child link="left_wheel" />
-        <origin xyz="0  -0.2 -0.15" rpy="0 0 0" />
+        <origin xyz="0  0.2 -0.15" rpy="0 0 0" />
         <axis xyz="0 1 0" rpy="0 0 0" />
         <limit effort="10000" velocity="1000" />
         <joint_properties damping="1.0" friction="1.0" />
@@ -170,7 +170,7 @@
     <joint name="joint_chassis_right_wheel" type="continuous">
         <parent link="base_link" />
         <child link="right_wheel" />
-        <origin xyz="0  0.2 -0.15" rpy="0 0 0" />
+        <origin xyz="0  -0.2 -0.15" rpy="0 0 0" />
         <limit effort="10000" velocity="1000" />
         <axis xyz="0 1 0" rpy="0 0 0" />
         <joint_properties damping="1.0" friction="1.0" />
@@ -205,8 +205,8 @@
     <joint name="front_caster_wheel_joint" type="fixed">
         <parent link="base_link" />
         <child link="front_caster_wheel" />
-        <origin xyz="-0.1  0.0 -0.15" rpy="0 0 0" />
-        <joint_properties damping="1.0" friction="0.0" />
+        <origin xyz="0.1  0.0 -0.15" rpy="0 0 0" />
+        <joint_properties damping="1.0" friction="1.0" />
     </joint>
     <!-- Link - front caster wheel -->
     <link name="front_caster_wheel">
@@ -237,8 +237,8 @@
     <joint name="back_caster_wheel_joint" type="fixed">
         <parent link="base_link" />
         <child link="back_caster_wheel" />
-        <origin xyz="0.1  0.0 -0.15" rpy="0 0 0" />
-        <joint_properties damping="1.0" friction="0.0" />
+        <origin xyz="-0.1  0.0 -0.15" rpy="0 0 0" />
+        <joint_properties damping="1.0" friction="1.0" />
     </joint>
 
     <!-- Link - back caster wheel -->
