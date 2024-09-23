@@ -1,0 +1,4 @@
+# Rotate.srv
+int32 degrees
+---
+string result
