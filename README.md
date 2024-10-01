@@ -73,7 +73,7 @@ The laser sensor provides the robot with environmental information. This sensor 
             </range>
         </ray>
         <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-            <topicName>/laser/scan</topicName>
+            <topicName>/scan</topicName>
         </plugin>
     </sensor>
 </gazebo>
