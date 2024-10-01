@@ -52,7 +52,7 @@ This section of the URDF file defines the robot's drive system using the differe
         <odometryTopic>odom</odometryTopic>
     </plugin>
 </gazebo>
-
+```
 ### **Laser Sensor Configuration**
 The laser sensor provides the robot with environmental information. This sensor uses a ray to scan and detect obstacles within a certain range.
 
