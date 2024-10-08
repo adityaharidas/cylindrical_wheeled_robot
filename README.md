@@ -1,4 +1,4 @@
-# Robot Rotation Service
+# RB1 Robot
 This project defines a ROS (Robot Operating System) service that allows a differential-drive robot to rotate by a specified number of degrees. The service takes requests to rotate the robot, calculates the required rotation based on current orientation (yaw), and commands the robot's velocity to achieve the desired turn.
 ## Features
 - A ROS-based service that allows for precise robot rotation using differential drive.
